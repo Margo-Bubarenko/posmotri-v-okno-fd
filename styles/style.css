@@ -55,33 +55,61 @@ ol {
 
 .content {
   display: flex;
-  margin: 133px 30px;
   flex-direction: row;
   justify-content: space-between;
   align-items: end;
+  margin: 133px 30px;  
   width: 1140px;
   height: 534px;
-  background-color: beige;
-  
+  gap: 30px;
 }
 
 .result {
   width: 711px;
   height: 456px;
   margin-top: 78px;
-  /** position: relative; **/
-  background-color: bisque;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
+
+} 
 
 .search-form {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: start;
+  height: 54px;
 }
 
+.content__list-container {
+  height: 298px;
+  overflow-y: scroll;
+}
 
+.content__details {
+  width: 399px;
+  height: 100%;
+}
 
+.title {
+  width: 260px;
+  height: 210px;
+}
+
+.result__video-container {
+  height: 386px;
+  width: 711px;
+  margin-bottom: 16px;
+}
+
+.result__video {
+  object-fit: contain;
+  height: 386px;
+  width: 711px;
+}
+
+.content__video-card-thumbnail {
+  width: 194px;
+  height: 103px;
+}
