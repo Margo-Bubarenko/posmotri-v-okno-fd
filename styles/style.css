@@ -60,7 +60,7 @@ ol {
   align-items: end;
   gap: 30px;  
   width: 1140px;
-  height: 534px;
+  min-height: 534px;
   margin: 133px 30px;
 }
 
@@ -173,12 +173,11 @@ ol {
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
   font-size: 30px;
-  font-style: Bold;
   line-height: 100%;
-  letter-spacing: 0%;
   text-transform: uppercase;
   text-overflow: ellipsis;
   white-space: nowrap;
+  height: 34px;
 }
 
 .content__video-card-description {
@@ -233,6 +232,7 @@ ol {
 }
 
 .search-form__textfield {
+  align-items: end;
   width: 225px;
   height: 27px;
   border: none;
@@ -245,7 +245,6 @@ ol {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  align-items: end;
 }
 
 .search-form__textfield::placeholder {
@@ -263,11 +262,15 @@ ol {
   border-left-color: #fff;
 }
 
-.search-form__textfield:focus {
+.search-form__textfield:focus,
+.search-form__checkbox:focus,
+.button:focus {
   outline: none;
 }
 
-.search-form__label:has(:not(:active):focus-visible) {
+.search-form__label:has(:not(:active):focus-visible),
+.search-form__submit-button:focus-visible,
+.more-button:focus-visible {
   outline: solid 1px #fff;
   outline-offset: 2px;
 } 
@@ -293,31 +296,46 @@ ol {
   opacity: 1;
 }
 
-.search-form__label:has(.search-form__checkbox):hover {
+.search-form__label:has(.search-form__checkbox):hover,
+.search-form__submit-button:hover,
+.more-button:hover,
+.content__card-link:has(.content__video-card-title):hover {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
-.search-form__checkbox:focus {
-  outline: none;
-}
+
 
 .button {
   border: solid 1px #fff;
-  background-color: transparent;
   color: #fff;
   font-family: inherit;
   font-weight: 700;
   font-size: 18px;
+  background-color: transparent;
 }
 
 .search-form__submit-button {
+  align-self: end;
   width: 194px;
   height: 34px;
-  align-self: end;
 }
 
 .more-button {
-  width: 390px;
+  flex-shrink: 0;
   height: 34px;
 }
+
+.search-form__submit-button:active,
+.more-button:active {
+  background-color: #545050;
+}
+
+.search-form__submit-button:has(:focus-visible),
+.more-button:has(:focus-visible) {
+  outline: solid 1px #fff;
+  outline-offset: 2px;
+} 
+
+
+
