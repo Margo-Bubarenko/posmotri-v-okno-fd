@@ -94,13 +94,9 @@ ol {
 .content__list {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 30px;
-  width: 100%;
-}
-
-.content__list-item {
-  padding-right: 3px;
-  padding-left: 3px;
+  width: 390px;
 }
 
 .content__list-container {
@@ -117,18 +113,15 @@ ol {
   flex-direction: row;
   justify-content: space-between;
   align-items: start;
+  height: 103px;
 }
 
 .content__card-link {
+  display: block;
   width: 196px;
-  height: 103px;
+  min-height: 103px;
   color: #fff;
   text-decoration: none;
-}
-
-.content__card-link:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
 }
 
 .content__card-link:active {
@@ -137,7 +130,8 @@ ol {
 
 
 .content__video-card-thumbnail {
-  width: 194px;
+  min-width: 194px;
+  height: 103px;
   object-fit: fill;
   object-position: top;
 }
@@ -178,9 +172,7 @@ ol {
 }
 
 .content__video-card-title {
-  display: inline-block;
   width: 196px;
-  height: 34px;
   overflow: hidden;
   font-family: 'Oswald', Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 700;
@@ -189,6 +181,7 @@ ol {
   text-transform: uppercase;
   text-overflow: ellipsis;
   white-space: nowrap;
+  margin-bottom: 6px;
 }
 
 .content__video-card-description {
@@ -277,8 +270,7 @@ ol {
 
 .search-form__textfield:focus,
 .search-form__checkbox:focus,
-.button:focus,
-.content__card-link:focus {
+.button:focus {
   outline: none;
 }
 
@@ -288,15 +280,15 @@ ol {
   outline-offset: 2px;
 } 
 
+.content__list-item:has(:focus-visible) {
+  outline: dashed 1px #fff;
+  outline-offset: 0;
+}
+
 .more-button:focus-visible {
   outline: solid 1px #fff;
   outline-offset: 2px;
 } 
-
-.content__card-link:focus-visible {
-  outline: solid 1px #fff;
-  outline-offset: 2px;
-}
 
 .search-form__pseudo-checkbox {
   width: 19px;
@@ -321,9 +313,10 @@ ol {
 
 .search-form__label:has(.search-form__checkbox):hover,
 .search-form__submit-button:hover,
-.more-button:hover {
+.more-button:hover,
+.content__card-link:hover {
   text-decoration: underline;
-  text-underline-offset: 3px;
+  text-underline-offset: 2px;
 }
 
 .button {
