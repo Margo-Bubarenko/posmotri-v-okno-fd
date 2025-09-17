@@ -17,7 +17,7 @@ html {
   font-size: 18px;
   background-color: #1b1919;
   inline-size: 1200px;
-  block-size: 100%;  
+  block-size: 100%;
 }
 
 h1,
@@ -59,12 +59,10 @@ ol {
   align-items: end;
   gap: 30px;  
   width: 1140px;
-  min-height: 534px;
   margin: 133px 30px;
 }
 
 .result {
-  display: flex;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -74,8 +72,13 @@ ol {
 } 
 
 .content__details {
-  width: 100%;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 26px;
+  inline-size: 100%;
+  block-size: 100%;
+  max-inline-size: 399px;
 }
 
 .result__video-container {
@@ -94,18 +97,22 @@ ol {
 .content__list {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: 30px;
-  width: 390px;
+  margin-block-end: 30px;
+  padding-block-start: 2px;
+}
+
+.content__list-item {
+  padding-right: 3px;
+  padding-left: 3px;
 }
 
 .content__list-container {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  height: 298px;
   overflow-y: scroll;
+  block-size: 298px;
 } 
 
 .content__video-card {
@@ -118,8 +125,6 @@ ol {
 
 .content__card-link {
   display: block;
-  width: 196px;
-  min-height: 103px;
   color: #fff;
   text-decoration: none;
 }
@@ -128,16 +133,18 @@ ol {
   background-color: #545050;
 }
 
-
 .content__video-card-thumbnail {
-  min-width: 194px;
-  height: 103px;
-  object-fit: fill;
-  object-position: top;
+  flex-shrink: 1;
+  object-fit: cover;
+  object-position: center;
+  min-inline-size: 194px;
+  block-size: 103px;
 }
 
 .content__video-card-description-container {
   flex-grow: 1;
+  flex-basis: 0;
+  overflow: hidden;
 }
 
 .search-form {
@@ -155,9 +162,8 @@ ol {
 }
 
 .title {
-  width: 269px;
+  width: 260px;
   height: 210px;
-  margin-bottom: 26px;
   font-family: "Oswald", Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 700;
   font-size: 75px;
@@ -172,7 +178,8 @@ ol {
 }
 
 .content__video-card-title {
-  width: 196px;
+  flex-shrink: 1;
+  margin-bottom: 6px;
   overflow: hidden;
   font-family: 'Oswald', Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 700;
@@ -180,8 +187,8 @@ ol {
   line-height: 100%;
   text-transform: uppercase;
   text-overflow: ellipsis;
+  min-inline-size: 196px;
   white-space: nowrap;
-  margin-bottom: 6px;
 }
 
 .content__video-card-description {
@@ -281,6 +288,7 @@ ol {
 } 
 
 .content__list-item:has(:focus-visible) {
+  border-radius: 0;
   outline: dashed 1px #fff;
   outline-offset: 0;
 }
