@@ -343,7 +343,7 @@ ol {
 .more-button {
   flex-shrink: 0;
   height: 34px;
-  margin: 0 3px 2px;
+  margin: 0 3px 3px;
 }
 
 .search-form__submit-button:active,
