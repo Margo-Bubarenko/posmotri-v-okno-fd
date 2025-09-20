@@ -219,7 +219,7 @@ ol {
 }
 
 .search-form__fieldset {
-  border: none;  
+  border: none;
 }
 
 .search-form__fieldset:has(.search-form__checkbox-list) {
@@ -308,7 +308,7 @@ ol {
   opacity: 1;
 }
 
-.search-form__label:hover,
+.search-form__label:hover .search-form__label-text,
 .button:hover,
 .content__card-link:hover {
   text-decoration: underline;
